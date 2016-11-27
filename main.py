@@ -97,7 +97,7 @@ class CentralWidget(QWidget):
 
         self.lambda_value = 0.2
         self.beta_value = 3
-        self.mu_value = 10
+        self.mu_value = 0.8
 
         grid = QGridLayout()
         self.setLayout(grid)
@@ -130,6 +130,7 @@ class CentralWidget(QWidget):
         grid.addWidget(QLabel("μ="), 1, 3)
         muEdit = QDoubleSpinBox()
         muEdit.setValue(self.mu_value)
+        muEdit.setSingleStep(0.1)
         grid.addWidget(muEdit, 1, 4)
         muEdit.valueChanged.connect(self.on_mu_changed)
 
